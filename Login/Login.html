@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Login/login.css" />
+    <title>Purilyser</title>
+  </head>
+
+  <body>
+    <div class="main">
+      <h1>Login</h1>
+
+      <div class="container">
+        <form id="clearFrom">
+          <label for="fname">Name</label>
+          <input
+            type="text"
+            id="fname"
+            name="firstname"
+            required
+            placeholder="Your name.."
+          /><br />
+
+          <label for="num">Mobile No.</label>
+          <input
+            type="text"
+            minlength="10"
+            id="phone"
+            name="Phone No."
+            placeholder="Mobile No."
+          /><br />
+
+          <label for="district">District</label>
+          <input type="text" id="dist" name="District" placeholder="District" />
+
+          <button type="submit" id="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+    <script src="/Login/login.js"></script>
+  </body>
+</html>
