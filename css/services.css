@@ -498,15 +498,14 @@ img {
   width: fit-content;
 }
 .img2 {
-  align-items: center;
   background-color: #eaeaea;
+  margin: 0px auto 0px auto;
 }
-img#img2.img2p {
+.img2p {
   height: 80%;
   width: 80%;
-  padding: 2px;
-  align-self: center;
-  margin: 10px;
+  padding: 20px;
+  margin: 40px;
   box-shadow: 7px 7px 7px 7px #93855a;
   border-radius: 10px;
 }
