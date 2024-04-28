@@ -18,65 +18,70 @@ const db = firestore.collection("text");
 //Get Submit Form
 let submitButton = document.getElementById("submit");
 
-//Get Form Values
-let fname = document.getElementById("fname").value;
-let phone = document.getElementById("phone").value;
-let dist = document.getElementById("dist").value;
-firestore
-  .collection("text")
-  .get()
-  .then((snapshot) => {
-    snapshot.docs.forEach((doc) => {
-      const fn = doc.data().fname;
-      if (fname === fn) {
-        console.log("Already Exists");
-      }
+//Create Event Listener To Allow Form Submission
+submitButton.addEventListener("click", (e) => {
+  //Prevent Default Form Submission Behavior
+  e.preventDefault();
 
-      // console.log("data", doc.data().fname);
+  //Get Form Values
+  let fname = document.getElementById("fname").value;
+  let phone = document.getElementById("phone").value;
+  let dist = document.getElementById("dist").value;
+
+  firestore
+    .collection("text")
+    .get()
+    .then((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        const fn = doc.data().fname;
+        if (firstName === fn) {
+          console.log("Already Exists");
+        }
+
+        // console.log("data", doc.data().fname);
+      });
     });
-  });
+  //Save Form Data To Firebase
+  db.doc()
+    .set({
+      fname: fname,
+      phone: phone,
+      dist: dist,
+    })
+    .then(() => {})
+    .catch((error) => {
+      console.log(error);
+    });
+  if (fname != "null" && phone != "null" && dist != "null") {
+    submitButton.addEventListener("click", (e) => {
+      e.preventDefault();
+    });
+  }
+  fire
+    .firestore()
+    .createUserWithEmailAndPassword(
+      this.state.fname,
+      this.state.phone,
+      this.state.dist
+    )
+    .then((u) => {})
+    .catch((error) => {
+      switch (error.code) {
+        case "firestore/name-already-in-use":
+          console.log(`Name ${this.state.fname} already in use.`);
+          break;
 
-//Save Form Data To Firebase
-db.doc()
-  .set({
-    fname: fname,
-    phone: phone,
-    dist: dist,
-  })
-  .then(() => {})
-  .catch((error) => {
-    console.log(error);
-  });
+        default:
+          console.log(error.message);
+          break;
+      }
+    });
+  //alert
+  alert("You have logged in successfully");
 
-//alert
-alert("Logged in successfully");
-
-//clear form after submission
-function clearForm() {
-  document.getElementById("clearFrom").reset();
-}
-clearForm();
-
-if (fname != "null" && phone != "null" && dist != "null") {
-  submitButton.addEventListener("click", (e) => {
-    e.preventDefault();
-  });
-}
-
-const sign_in_btn = document.querySelector("#sign-in-btn");
-const sign_up_btn = document.querySelector("#sign-up-btn");
-const container = document.querySelector(".container");
-const sign_in_btn2 = document.querySelector("#sign-in-btn2");
-const sign_up_btn2 = document.querySelector("#sign-up-btn2");
-sign_up_btn.addEventListener("click", () => {
-  container.classList.add("sign-up-mode");
-});
-sign_in_btn.addEventListener("click", () => {
-  container.classList.remove("sign-up-mode");
-});
-sign_up_btn2.addEventListener("click", () => {
-  container.classList.add("sign-up-mode2");
-});
-sign_in_btn2.addEventListener("click", () => {
-  container.classList.remove("sign-up-mode2");
+  //clear form after submission
+  function clearForm() {
+    document.getElementById("clearFrom").reset();
+  }
+  clearForm();
 });
