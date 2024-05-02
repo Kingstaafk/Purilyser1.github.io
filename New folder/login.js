@@ -21,7 +21,6 @@ let submitButton = document.getElementById("submit");
 //Create Event Listener To Allow Form Submission
 submitButton.addEventListener("click", (e) => {
   //Prevent Default Form Submission Behavior
-  e.preventDefault();
 
   //Get Form Values
   let fname = document.getElementById("fname").value;
