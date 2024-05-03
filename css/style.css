@@ -102,8 +102,7 @@ img {
   height: 360px;
   width: auto;
 }
-#vid {
-}
+
 .video .video-preview {
   margin-bottom: 20px;
 }
@@ -591,7 +590,7 @@ img#img2 {
 
 .active,
 .dot:hover {
-  background-color: #717171;
+  background-color: #eaeaea;
 }
 
 /* Fading animation */
