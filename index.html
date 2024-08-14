@@ -24,6 +24,8 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
   </head>
   <body>
+     <!--Popup-->
+    
     <nav class="navbar">
       <div class="container">
         <div class="logo">
@@ -54,8 +56,8 @@
               <a href="Services.html">Services</a>
             </li>
             <li>
-              <a class="btn" href="login.html" id="login">
-                <i class="fas fa-user"></i> Log In
+              <a class="btn" href="https://play.google.com/store/apps/details?id=com.purilyser.rishabh_soni&pcampaignid=web_share" id="login">
+                <i class="fas fa-user"></i> Buy
               </a>
             </li>
           </ul>
@@ -87,8 +89,8 @@
               </div>
             </div>
             <li>
-              <a href="login.html" class="btn" id="login">
-                <i class="fas fa-user"></i> Log In
+              <a class="btn" href="https://play.google.com/store/apps/details?id=com.purilyser.rishabh_soni&pcampaignid=web_share" id="login">
+                <i class="fas fa-user"></i> Buy
               </a>
             </li>
           </ul>
@@ -109,7 +111,7 @@
         </p>
 
         <div class="hero-buttons">
-          <a href="login.html" class="btn btn-primary">Get Started</a>
+          <a href="https://play.google.com/store/apps/details?id=com.purilyser.rishabh_soni&pcampaignid=web_share" class="btn btn-primary">Get Started</a>
           <a href="https://youtu.be/MAF2aoFqSu0?feature=shared" class="btn"><i class="fas fa-laptop"></i> Demo</a>
         </div>
       </div>
@@ -130,6 +132,31 @@
         </div>
       </div>
     </section>
+   <!-- A button to open the popup form -->
+<button class="open-button" onclick="openForm()">Hello!</button>
+
+<!-- The form -->
+<div class="form-popup" id="myForm">
+  <form action="" class="form-container">
+    <h1>Welcome !</h1>
+    <h4>We would be glad to know about you</h4>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Name / Shop Name" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Mobile No." name="psw" required><br>
+    
+    <label for="City"><b>City</b></label>
+    <input type="text" placeholder="Select City" name="City" required>
+
+
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+
+
+  </form>
+</div>
 
     <!-- Footer -->
     <footer class="footer bg-black">
@@ -183,5 +210,6 @@
 
     <script src="js/main.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/Purilyser/login.js"></script>
   </body>
 </html>
